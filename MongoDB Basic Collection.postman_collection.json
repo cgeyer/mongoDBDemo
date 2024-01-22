@@ -1,0 +1,123 @@
+{
+	"info": {
+		"_postman_id": "05710a09-dd3d-4a49-9f69-c9af6be0919c",
+		"name": "MongoDB Basic Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "744560"
+	},
+	"item": [
+		{
+			"name": "Find Object",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "apiKey",
+						"value": "{{apiKey}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"dataSource\":\"{{dataSource}}\",\n    \"database\":\"{{database}}\",\n    \"collection\":\"{{collection}}\",\n    \"filter\" : {\n        \"key\":\"value\"\n    }\n}"
+				},
+				"url": {
+					"raw": "{{mongoDBURL}}/action/findOne",
+					"host": [
+						"{{mongoDBURL}}"
+					],
+					"path": [
+						"action",
+						"findOne"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Object",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "apiKey",
+						"value": "{{apiKey}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"dataSource\":\"{{dataSource}}\",\n    \"database\":\"{{database}}\",\n    \"collection\":\"{{collection}}\",\n    \"filter\" : {\n        \"key\":\"value\"\n    },\n    \"update\" : {\n        \"$set\": {\n            \"key\": \"value\"\n        }\n    }\n}"
+				},
+				"url": {
+					"raw": "{{mongoDBURL}}/action/updateOne",
+					"host": [
+						"{{mongoDBURL}}"
+					],
+					"path": [
+						"action",
+						"updateOne"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "apiKey",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "mongoDBURL",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "dataSource",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "database",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "collection",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
